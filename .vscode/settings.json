@@ -3,5 +3,6 @@
         "mvn compile": true,
         "java": true,
         "javac": true
-    }
+    },
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

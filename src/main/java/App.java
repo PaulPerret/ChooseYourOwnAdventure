@@ -1,5 +1,13 @@
+import java.util.Map;
+
+import book.BookBuilder;
+import book.Page;
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+
+        BookBuilder bookBuilder = new BookBuilder();
+        Map<Integer, Page> book = bookBuilder.buildBook("transformers");
+
     }
 }
