@@ -1,8 +1,9 @@
 [
     {"pageNumber": 1, "choices": [5, 6]},
     {"pageNumber": 5, "choices": [12, 17]},
-    {"pageNumber": 6, "choices": [10, 18]},
+    {"pageNumber": 6, "choices": [10]},
     {"pageNumber": 12, "choices": []},
-    {"pageNumber": 10, "choices": []},
-    {"pageNumber": 17, "choices": []}
+    {"pageNumber": 10, "choices": [17, 18]},
+    {"pageNumber": 17, "choices": []},
+    {"pageNumber": 18, "choices": []}
 ]

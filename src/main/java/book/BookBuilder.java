@@ -54,13 +54,13 @@ public class BookBuilder {
 
         System.out.println("Book loaded successfully with " + pageMap.size() + " pages.");
         // Print out the pages and their choices for verification
-        for (Page page : pageMap.values()) {
-            System.out.print("Page " + page.getPageNumber() + " has choices: ");
-            for (Page choice : page.getChoices()) {
-                System.out.print(choice.getPageNumber() + " ");
-            }
-            System.out.println();
-        }   
+        // for (Page page : pageMap.values()) {
+        //     System.out.print("Page " + page.getPageNumber() + " has choices: ");
+        //     for (Page choice : page.getChoices()) {
+        //         System.out.print(choice.getPageNumber() + " ");
+        //     }
+        //     System.out.println();
+        // }   
 
         return pageMap;
     }

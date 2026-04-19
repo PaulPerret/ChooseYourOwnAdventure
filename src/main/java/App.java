@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import book.BookBuilder;
@@ -14,16 +15,17 @@ public class App {
         // Do search for a path from page 1 to page 17
         BookSearch bookSearch = new BookSearch();
         Integer targetPageNum = 17;
-        ArrayList<Page> path = bookSearch.findPath(book, 1, targetPageNum);
+        List<List<Page>> solutionList = bookSearch.findPaths(book, 1, targetPageNum);
 
-        if (path != null) {
-            System.out.println("Path found from page 1 to page " + targetPageNum + ":");
+        System.out.println("Solutions found: " + (solutionList != null ? solutionList.size() : 0));
+        for (List<Page> path : solutionList) {
             for (Page page : path) {
-                System.out.print(page.getPageNumber() + " ");
+                System.out.print(page.getPageNumber());
+                if (page.getPageNumber() != targetPageNum) {
+                    System.out.print(" -> ");
+                }
             }
             System.out.println();
-        } else {
-            System.out.println("No path found from page 1 to page " + targetPageNum);
         }
     }
 }
