@@ -14,7 +14,7 @@ public class App {
 
         // Do search for a path from page 1 to page 17
         BookSearch bookSearch = new BookSearch();
-        Integer targetPageNum = 17;
+        Integer targetPageNum = 42;
         List<List<Page>> solutionList = bookSearch.findPaths(book, 1, targetPageNum);
 
         System.out.println("Solutions found: " + (solutionList != null ? solutionList.size() : 0));

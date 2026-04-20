@@ -33,12 +33,12 @@ public class BookSearch {
         if (currentPage.getPageNumber() == targetPageNum) {
             allPaths.add(new ArrayList<>(currentPath));
             System.out.println("- Found target.");
-        }
-
-        // Explore each choice from the current page
-        for (Page choice : currentPage.getChoices()) {
-            if (!visited.contains(choice.getPageNumber())) {
-                dfs(choice, targetPageNum, currentPath, visited, allPaths);
+        } else {
+            // Explore each choice from the current page
+            for (Page choice : currentPage.getChoices()) {
+                if (!visited.contains(choice.getPageNumber())) {
+                    dfs(choice, targetPageNum, currentPath, visited, allPaths);
+                }
             }
         }
 
