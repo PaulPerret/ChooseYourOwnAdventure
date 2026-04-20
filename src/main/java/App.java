@@ -12,20 +12,25 @@ public class App {
         BookBuilder bookBuilder = new BookBuilder();
         Map<Integer, Page> book = bookBuilder.buildBook("transformers");
 
-        // Do search for a path from page 1 to page 17
-        BookSearch bookSearch = new BookSearch();
-        Integer targetPageNum = 42;
-        List<List<Page>> solutionList = bookSearch.findPaths(book, 1, targetPageNum);
+        // Prompt user for what page they want to find
+        System.out.print("> Enter the page number you want to find: ");
+        try (java.util.Scanner scanner = new java.util.Scanner(System.in)) {
+            Integer targetPageNum = scanner.nextInt();
 
-        System.out.println("Solutions found: " + (solutionList != null ? solutionList.size() : 0));
-        for (List<Page> path : solutionList) {
-            for (Page page : path) {
-                System.out.print(page.getPageNumber());
-                if (page.getPageNumber() != targetPageNum) {
-                    System.out.print(" -> ");
+            // Do search for a path from page 1 to page 17
+            BookSearch bookSearch = new BookSearch();
+            List<List<Page>> solutionList = bookSearch.findPaths(book, 1, targetPageNum);
+
+            System.out.println("Solutions found: " + (solutionList != null ? solutionList.size() : 0));
+            for (List<Page> path : solutionList) {
+                for (Page page : path) {
+                    System.out.print(page.getPageNumber());
+                    if (page.getPageNumber() != targetPageNum) {
+                        System.out.print(" -> ");
+                    }
                 }
+                System.out.println();
             }
-            System.out.println();
         }
     }
 }
