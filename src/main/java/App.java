@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +16,7 @@ public class App {
         try (java.util.Scanner scanner = new java.util.Scanner(System.in)) {
             Integer targetPageNum = scanner.nextInt();
 
-            // Do search for a path from page 1 to page 17
+            // Do search for a path from page 1 to the target page
             BookSearch bookSearch = new BookSearch();
             List<List<Page>> solutionList = bookSearch.findPaths(book, 1, targetPageNum);
 

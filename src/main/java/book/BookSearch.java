@@ -38,9 +38,7 @@ public class BookSearch {
         visited.add(currentPage.getPageNumber());
         currentPath.add(currentPage);
 
-        // Check if we've reached the target page. If so, add the current path to the list
-        // of all paths
-        //System.out.println("Visiting page " + currentPage.getPageNumber() + ", current path: " + getPathString(currentPath));
+        // Check if we've reached the target page. If so, add the current path to the list of all paths
         if (currentPage.getPageNumber() == targetPageNum) {
             allPaths.add(new ArrayList<>(currentPath));
             foundTarget = true;
